@@ -8,7 +8,8 @@ public class Jooks extends Treenimine{
         this.ilmapoiss = misIlmOn();
     }
 
-
+    // leiab tempo, kui kiirelt kasutaja 1 km läbib ning kasutades erilisi muutujaid
+    // muudab see kiirust
     @Override
     public double tempo() {
         pikkTreening();
@@ -26,6 +27,7 @@ public class Jooks extends Treenimine{
         return Math.round(tempo * 10.0) / 10.0;
     }
 
+    //meetod, mis leiab muusikažanri kasutades suvalist aru
     public String muusikaŽanr(){
         int suvakas = suvalineNumber();
         String muusikažanr = "";
@@ -37,21 +39,22 @@ public class Jooks extends Treenimine{
             muusikažanr += "Hip Hopi, ehk Kanye West";
         }
         if (suvakas == 3){
-            muusikažanr += "K-Popi...BTS >:[";
+            muusikažanr += "K-Popi...BTS :=0";
         }
         return muusikažanr;
     }
 
+    //meetod, mis annab treenimiskoha, kasutades suvalist arvu.
     @Override
     public void treening() {
         System.out.println();
         int suvakas = suvalineNumber();
         if (suvakas == 1) {
-            System.out.println("Täna treenid rabas! Good boy! ");
+            System.out.println("Täna treenid rabas! Hea poiss!");
         } else if (suvakas == 2) {
-            System.out.println("Täna treenid metsas! Bad boy! ");
+            System.out.println("Täna treenid džunglis! Väike pärdik! ");
         } else {
-            System.out.println("Täna treenid linnas! Sitakott! ");
+            System.out.println("Täna treenid linnas! Ole ettevaatlik autodega!");
         }
     }
 }

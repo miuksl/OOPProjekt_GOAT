@@ -7,21 +7,23 @@ public class Rattasõit extends Treenimine{
         this.elektriratas = elektriratas;
         this.ilmatüdruk = misIlmOn();
     }
-
+    // leiab suvalise numbri alusel, kus kasutaja täna trenni teeb
     @Override
     public void treening() {
         pikkTreening();
         System.out.println();
         int suvakas = suvalineNumber();
         if (suvakas == 1) {
-            System.out.println("Täna treenid maanteel! Good boy! ");
+            System.out.println("Täna treenid maanteel! Ole ettevaatlik! ");
         } else if (suvakas == 2) {
-            System.out.println("Täna treenid jõusaali ratastel! Bad boy! ");
+            System.out.println("Täna treenid jõusaali ratastel! Lihtne, kuid efektiivne! ");
         } else {
-            System.out.println("Täna treenid linnas! Sitakott! ");
+            System.out.println("Täna treenid linnas! On mida vaadata! ");
         }
     }
 
+    // leiab tempo, kui kiirelt kasutaja 1 km läbib ning kasutades erilisi muutujaid
+    // muudab see kiirust
     @Override
     public double tempo() {
         String tuul = tuuleOlek();
@@ -44,7 +46,7 @@ public class Rattasõit extends Treenimine{
         }
         return Math.round(tempo * 10.0) / 10.0;
     }
-
+    // leiab 1-3 vahemikus suvalise numbri ning selle põhjal valib, mis tuulega on konkreetsel päeval tegemist
     public String tuuleOlek(){
         int suvakas = suvalineNumber();
         String misTuul = "";

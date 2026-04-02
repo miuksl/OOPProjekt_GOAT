@@ -10,13 +10,15 @@ public class Sõudmine extends Treenimine{
         this.ilmatüdruk = misIlmOn();
     }
 
+    // leiab tempo, kui kiirelt kasutaja 1 km läbib ning kasutades erilisi muutujaid
+    // muudab see kiirust
     @Override
     public double tempo() {
         pikkTreening();
         System.out.println();
         double tempo = getAeg() / getDistants();
         if (lained) {
-            System.out.println("Oi suiskavittulainen mis lained!! Need tõmbavad kiirust 15% alla!");
+            System.out.println("Oi mis lained!! Need tõmbavad kiirust 15% alla!");
             tempo *= 1.15;
         }
         if (kaaslane) {
@@ -36,23 +38,21 @@ public class Sõudmine extends Treenimine{
                 System.out.println("Sul on külgtuul, juhitavus on raskendatud! :( ");
             }
         }
-
-
         return Math.round(tempo * 10.0) / 10.0;
     }
-
+    //Meetod, mis ütleb kus kasutaja teeb trenni kasutades suvalist numbrit 1-3
     @Override
     public void treening() {
         System.out.println();
         int suvakas = suvalineNumber();
         if (suvakas == 1) {
-            System.out.println("Täna treenid merel! Good boy! ");
+            System.out.println("Täna treenid merel! Värske õhk ja taaskäivitus peale! ");
             lained = true;
         } else if (suvakas == 2) {
-            System.out.println("Täna treenid jõel! Bad boy! ");
+            System.out.println("Täna treenid jõel! Sinka-vonka! ");
             lained = true;
         } else {
-            System.out.println("Täna treenid jõusaalis! Sitakott! ");
+            System.out.println("Täna treenid jõusaalis! Toas on ka tore olla! ");
         }
     }
 }

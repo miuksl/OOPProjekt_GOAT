@@ -7,10 +7,14 @@ public abstract class Treenimine {
         this.distants = distants;
     }
 
+    //Abstraktne meetod treening
     public abstract void treening();
 
+    //Abstraktne meetod tempo
     public abstract double tempo();
 
+
+    //meetod, mis väljastab arvestades treeningu pikkusega
     public void pikkTreening() {
         if (aeg >= 60) {
             System.out.println("Ossa! Täna on pikk treening käsil! Higistame palju! \n");
@@ -22,11 +26,13 @@ public abstract class Treenimine {
     }
 
 
+    //Suvalise numbri generaator
     public int suvalineNumber(){
         int number = (int) (Math.random() * 3) + 1;
         return number;
     }
 
+    //meetod, mis annab meile ilma
     public String misIlmOn(){
         int number = suvalineNumber();
         if (number == 1) {

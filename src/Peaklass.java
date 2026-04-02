@@ -1,10 +1,36 @@
 import java.util.Locale;
 import java.util.Scanner;
+//Autorid:
+//Mio Cristopher Vahtra
+//Kristofer-Robin Tiits
+//Treenimis simulaator mäng
+
 
 public class Peaklass {
-    //
+    //Peameetod, kus while tsükli ajal küsitakse mis trenni tahab kasutaja teha
     static void main(String[] args) {
-        boolean töötab = true;
+        System.out.println("Tere tulemast treenimis simulaatorisse!" +
+                "\nSul seisab ees valik viie treeningu vahel" +
+                "\nmängida võid nii kaua kui tahad piiranguid pole!" +
+                "\nproovi kõiki kombinatsioone läbi, et leida ka väikedetailid üles" +
+                "\nEDU sulle ning head tervist! ! !" +
+                "\nVajuta 1, et alustada!");
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        Scanner scanner0 = new Scanner(System.in);
+        String b = scanner0.nextLine();
+
+        boolean töötab = false;
+        if(b.equals("1")){
+            töötab = true;
+        }
+
         while(töötab){
             Scanner scanner = new Scanner(System.in);
 
@@ -36,11 +62,11 @@ public class Peaklass {
                 System.out.println("Kui kaua plaanid joosta? (minutites)");
 
                 String kaua = scanner.nextLine();
-                int KAUA = Integer.parseInt(kaua);
+                int kauaAeg = Integer.parseInt(kaua);
 
                 System.out.println("\nMis distantsi mõtled joosta (kilomeetrites)? nt 6.7");
                 String pikkus = scanner.nextLine();
-                double PIKKUS = Double.parseDouble(pikkus);
+                double paljuPikkus = Double.parseDouble(pikkus);
 
 
                 System.out.println("\nKas mussi ka kuulame?");
@@ -53,16 +79,17 @@ public class Peaklass {
                 }
 
 
-                Treenimine jooks = new Jooks(KAUA, PIKKUS, kasMuusika);
+                Treenimine jooks = new Jooks(kauaAeg, paljuPikkus, kasMuusika);
                 jooks.treening();
                 System.out.println("Peaksid ühe kilomeetri läbima järgmise ajaga: " + jooks.tempo() + " min/km");
+                System.out.println(jooks.toString());
             }
 
 
             //JALUTAMISE OSA
             // kepikõnd on algselt false, sest kasutaja valib, kas ta seda soovib
             if (a.equals("2")){
-                boolean kepiKÕND = false;
+                boolean kepiKõnd = false;
 
                 System.out.println("Valisid jalutamine!\n");
 
@@ -72,26 +99,26 @@ public class Peaklass {
 
                 String kaua = scanner.nextLine();
                 // leiab täisarvu minutid
-                int KAUA = Integer.parseInt(kaua);
+                int kauaAeg = Integer.parseInt(kaua);
                 // leiab double ühe komakohaga distantsi
                 System.out.println("\nKui palju jalutame? (kilomeetrites)? nt 6.7");
                 String pikkus = scanner.nextLine();
-                double PIKKUS = Double.parseDouble(pikkus);
+                double paljuPikkus = Double.parseDouble(pikkus);
                 // kontrrolime kas kasutaja soovib kepikõndi ning teeme tingimuse, et tähed tuleksid väikselt
                 System.out.println("\nKas täna läheme kepikõnnile? :) (jah/ei)");
                 String valik = scanner.nextLine().toLowerCase();
 
                 if(valik.equals("jah")){
                     System.out.println("Valik tehtud! Täna on kepikõnni aeg!");
-                    kepiKÕND = true;
+                    kepiKõnd = true;
                 }
 
 
 
-                Treenimine jalutus = new Jalutamine(KAUA, PIKKUS, kepiKÕND);
-                System.out.println(jalutus.toString());
+                Treenimine jalutus = new Jalutamine(kauaAeg, paljuPikkus, kepiKõnd);
                 jalutus.treening();
                 System.out.println("Peaksid ühe kilomeetri läbima järgmise ajaga: " + jalutus.tempo() + " min/km");
+                System.out.println(jalutus.toString());
             }
 
 
@@ -103,15 +130,14 @@ public class Peaklass {
 
                 System.out.println("Mitu minutit plaanid ujuda? ");
                 String kaua = scanner.nextLine();
-                int KAUA = Integer.parseInt(kaua);
+                int kauaAeg = Integer.parseInt(kaua);
 
                 System.out.println("Mitu kilomeetrid ujume? nt 6.7");
                 String pikkus = scanner.nextLine();
-                double PIKKUS = Double.parseDouble(pikkus);
+                double paljuPikkus = Double.parseDouble(pikkus);
 
                 System.out.println("\nKas võtame ujumisprillid ka kaasa? :) (jah/ei)");
-                String valik1 = scanner.nextLine();
-                valik1 = valik1.toLowerCase(Locale.ROOT);
+                String valik1 = scanner.nextLine().toLowerCase();
 
                 if(valik1.equals("jah")){
                     System.out.println("Valik tehtud! Ujumisprillid on nüüd trennikotis!");
@@ -119,15 +145,14 @@ public class Peaklass {
                 }
 
                 System.out.println("\nAga lestad? (jah/ei)");
-                String valik2 = scanner.nextLine();
-                valik2 = valik2.toLowerCase(Locale.ROOT);
+                String valik2 = scanner.nextLine().toLowerCase();
 
                 if(valik2.equals("jah")){
                     System.out.println("Valik tehtud! Lestad on nüüd trennikotis!");
                     lestad = true;
                 }
 
-                Treenimine ujumine = new Ujumine(KAUA, PIKKUS, lestad, prillid);
+                Treenimine ujumine = new Ujumine(kauaAeg, paljuPikkus, lestad, prillid);
 
                 ujumine.treening();
                 System.out.println("Peaksid ühe kilomeetri läbima järgmise ajaga: " + ujumine.tempo() + " min/km");
@@ -159,10 +184,9 @@ public class Peaklass {
                     System.out.println("\n Olgu! Täna siis üksi. ");
                 }
                 Sõudmine soudmine = new Sõudmine(ajaline, pikkusSõudmine, kaaslaneKaasas);
-                soudmine.toString();
                 soudmine.treening();
                 System.out.println("Tempo: " + soudmine.tempo() + "min/km");
-
+                System.out.println(soudmine.toString());
             }
 
             if (a.equals("5")){
@@ -187,11 +211,12 @@ public class Peaklass {
                     System.out.println("\n Valik tehtud");
                 }
                 Rattasõit rattasoit = new Rattasõit(ajaline, distants, elektriratas);
-                rattasoit.toString();
                 rattasoit.treening();
                 System.out.println("Tempo: " + rattasoit.tempo() + "min/km");
+                System.out.println(rattasoit.toString());
             }
             if(a.equals("0")){
+                System.out.println("\nTreenimine lõpetatud!");
                 töötab = false;
             }
         }
