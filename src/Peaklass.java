@@ -73,14 +73,13 @@ public class Peaklass {
                 String kaua = scanner.nextLine();
                 // leiab täisarvu minutid
                 int KAUA = Integer.parseInt(kaua);
-
+                // leiab double ühe komakohaga distantsi
                 System.out.println("\nKui palju jalutame? (kilomeetrites)? nt 6.7");
                 String pikkus = scanner.nextLine();
                 double PIKKUS = Double.parseDouble(pikkus);
-
+                // kontrrolime kas kasutaja soovib kepikõndi ning teeme tingimuse, et tähed tuleksid väikselt
                 System.out.println("\nKas täna läheme kepikõnnile? :) (jah/ei)");
-                String valik = scanner.nextLine();
-                valik = valik.toLowerCase(Locale.ROOT);
+                String valik = scanner.nextLine().toLowerCase();
 
                 if(valik.equals("jah")){
                     System.out.println("Valik tehtud! Täna on kepikõnni aeg!");
