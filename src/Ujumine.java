@@ -55,6 +55,5 @@ public class Ujumine extends Treenimine{
             System.out.println("Basseinis on ikka hea treenida!");
             bassein = true;
         }
-
     }
 }

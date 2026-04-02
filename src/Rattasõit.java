@@ -40,7 +40,7 @@ public class Rattasõit extends Treenimine{
         } else if (tuul.equals("Vastutuul")) {
             tempo *= 1.1;
         } else {
-            System.out.println("\n Täna on tuulevaikne! Pole muudatust sinu tempole.");
+            System.out.println("\nTäna on tuulevaikne! Pole muudatust sinu tempole.");
         }
         return Math.round(tempo * 10.0) / 10.0;
     }

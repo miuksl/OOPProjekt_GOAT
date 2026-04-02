@@ -54,5 +54,8 @@ public abstract class Treenimine {
         this.distants = distants;
     }
 
-
+    @Override
+    public String toString() {
+        return "Otsustasid teha " + aeg + " minutit trenni, distantsil " + distants + " km";
+    }
 }

@@ -54,6 +54,5 @@ public class Sõudmine extends Treenimine{
         } else {
             System.out.println("Täna treenid jõusaalis! Sitakott! ");
         }
-
     }
 }

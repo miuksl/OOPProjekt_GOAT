@@ -54,6 +54,4 @@ public class Jooks extends Treenimine{
             System.out.println("Täna treenid linnas! Sitakott! ");
         }
     }
-
-
 }

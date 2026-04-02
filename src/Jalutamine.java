@@ -39,9 +39,4 @@ public class Jalutamine extends Treenimine{
         }
         return Math.round(tempo * 10.0) / 10.0;
     }
-
-    @Override
-    public String toString() {
-        return "Hetkel olen loodud!";
-    }
 }
