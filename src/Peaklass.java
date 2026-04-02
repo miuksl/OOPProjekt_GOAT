@@ -16,25 +16,30 @@ public class Peaklass {
 
         String a = scanner.nextLine();
 
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
         //JOOKSMISE OSA
         if (a.equals("1")){
             boolean kasMuusika = false;
 
-            System.out.println("Valisid jooksmine!");
+            System.out.println("Valisid jooksmine!\n");
 
 
-            System.out.println();
             System.out.println("Kui kaua plaanid joosta? (minutites)");
 
             String kaua = scanner.nextLine();
             int KAUA = Integer.parseInt(kaua);
 
-            System.out.println("Mis distantsi mõtled joosta (kilomeetrites)? nt 6.7");
+            System.out.println("\nMis distantsi mõtled joosta (kilomeetrites)? nt 6.7");
             String pikkus = scanner.nextLine();
             double PIKKUS = Double.parseDouble(pikkus);
 
 
-            System.out.println("Kas mussi ka kuulame?");
+            System.out.println("\nKas mussi ka kuulame?");
             String valik = scanner.nextLine();
             valik = valik.toLowerCase(Locale.ROOT);
 
@@ -54,7 +59,7 @@ public class Peaklass {
         if (a.equals("2")){
             boolean kepiKÕND = false;
 
-            System.out.println("Valisid jalutamine!");
+            System.out.println("Valisid jalutamine!\n");
 
 
             System.out.println();
@@ -63,11 +68,11 @@ public class Peaklass {
             String kaua = scanner.nextLine();
             int KAUA = Integer.parseInt(kaua);
 
-            System.out.println("Kui kaugele mõtled jalutada (kilomeetrites)? nt 6.7");
+            System.out.println("\nKui palju jalutame? (kilomeetrites)? nt 6.7");
             String pikkus = scanner.nextLine();
             double PIKKUS = Double.parseDouble(pikkus);
 
-            System.out.println("Kas täna läheme kepikõnnile? :) (jah/ei)");
+            System.out.println("\nKas täna läheme kepikõnnile? :) (jah/ei)");
             String valik = scanner.nextLine();
             valik = valik.toLowerCase(Locale.ROOT);
 
@@ -83,16 +88,103 @@ public class Peaklass {
             jalutus.treening();
             System.out.println("Peaksid ühe kilomeetri läbima järgmise ajaga: " + jalutus.tempo() + " min/km");
         }
+
+
+        //UJUMISE OSA
         if (a.equals("3")){
-            System.out.println("Valisid ujumine!");
+            System.out.println("Valisid ujumine!\n");
+            boolean lestad = false;
+            boolean prillid = false;
+
+            System.out.println("Mitu minutit plaanid ujuda? ");
+            String kaua = scanner.nextLine();
+            int KAUA = Integer.parseInt(kaua);
+
+            System.out.println("Mitu kilomeetrid ujume? nt 6.7");
+            String pikkus = scanner.nextLine();
+            double PIKKUS = Double.parseDouble(pikkus);
+
+            System.out.println("\nKas võtame ujumisprillid ka kaasa? :) (jah/ei)");
+            String valik1 = scanner.nextLine();
+            valik1 = valik1.toLowerCase(Locale.ROOT);
+
+            if(valik1.equals("jah")){
+                System.out.println("Valik tehtud! Ujumisprillid on nüüd trennikotis!");
+                prillid = true;
+            }
+
+            System.out.println("\nAga lestad? (jah/ei)");
+            String valik2 = scanner.nextLine();
+            valik2 = valik2.toLowerCase(Locale.ROOT);
+
+            if(valik2.equals("jah")){
+                System.out.println("Valik tehtud! Lestad on nüüd trennikotis!");
+                lestad = true;
+            }
+
+            Treenimine ujumine = new Ujumine(KAUA, PIKKUS, lestad, prillid);
+
+            ujumine.treening();
+            System.out.println("Peaksid ühe kilomeetri läbima järgmise ajaga: " + ujumine.tempo() + " min/km");
+
+
         }
+
+        //SÕUDMISE OSA
         if (a.equals("4")){
-            System.out.println("Valisid sõudmise!");
+            boolean kaaslaneKaasas = false;
+
+            System.out.println("Valisid sõudmise!\n");
+            System.out.println();
+            System.out.println("Mitu minutit soovid sõuda? ");
+            String kaua = scanner.nextLine();
+            int ajaline = Integer.parseInt(kaua);
+
+            System.out.println("\nKui kaugele mõtled sõuda (kilomeetrites)? nt 6.7");
+            String pikkusSõud = scanner.nextLine();
+            double pikkusSõudmine = Double.parseDouble(pikkusSõud);
+
+            System.out.println("\nKas täna võtame sõbra ka kaasa? Seltsis segasem :) (jah/ei)");
+            String sõudmineValik1 = scanner.nextLine().toLowerCase();
+
+            if (sõudmineValik1.equals("jah")) {
+                System.out.println("\n Valik tehtud! ");
+                kaaslaneKaasas = true;
+            } else {
+                System.out.println("\n Olgu! Täna siis üksi. ");
+            }
+            Sõudmine soudmine = new Sõudmine(ajaline, pikkusSõudmine, kaaslaneKaasas);
+            soudmine.toString();
+            soudmine.treening();
+            System.out.println("Tempo: " + soudmine.tempo() + "min/km");
+
         }
+
         if (a.equals("5")){
-            System.out.println("Valisid rattasõidu!");
+            boolean elektriratas = false;
+
+            System.out.println("Valisid rattasõidu!\n");
+            System.out.println();
+
+            System.out.println("Mitu minutit soovid sõita?");
+            int ajaline = Integer.parseInt(scanner.nextLine());
+
+            System.out.println("Kui pika maa soovid sõita (kilomeetrites)? nt 6.7");
+            double distants = Double.parseDouble(scanner.nextLine());
+
+            System.out.println("Kas kasutad elektriratast? (jah/ei)");
+            String rattavalik = scanner.nextLine().toLowerCase();
+
+            if (rattavalik.equals("jah")) {
+                elektriratas = true;
+                System.out.println("\n Valik tehtud.");
+            } else {
+                System.out.println("\n Valik tehtud");
+            }
+            Rattasõit rattasoit = new Rattasõit(ajaline, distants, elektriratas);
+            rattasoit.toString();
+            rattasoit.treening();
+            System.out.println("Tempo: " + rattasoit.tempo() + "min/km");
         }
-
-
     }
 }

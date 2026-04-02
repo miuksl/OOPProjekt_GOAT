@@ -11,6 +11,8 @@ public class Jooks extends Treenimine{
 
     @Override
     public double tempo() {
+        pikkTreening();
+        System.out.println();
         double tempo = getAeg() / getDistants();
         if (muss) {
             System.out.println("\n" + "Täna sa kuulad: " + muusikaŽanr());

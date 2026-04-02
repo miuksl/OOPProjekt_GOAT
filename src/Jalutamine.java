@@ -23,6 +23,8 @@ public class Jalutamine extends Treenimine{
 
     @Override
     public double tempo() {
+        pikkTreening();
+        System.out.println();
         double tempo = getAeg() / getDistants();
         if (kepikõnd) {
             System.out.println();

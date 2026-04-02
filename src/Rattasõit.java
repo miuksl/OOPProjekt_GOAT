@@ -10,6 +10,7 @@ public class Rattasõit extends Treenimine{
 
     @Override
     public void treening() {
+        pikkTreening();
         System.out.println();
         int suvakas = suvalineNumber();
         if (suvakas == 1) {

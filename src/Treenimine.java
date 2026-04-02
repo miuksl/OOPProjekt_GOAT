@@ -11,9 +11,16 @@ public abstract class Treenimine {
 
     public abstract double tempo();
 
-    public boolean pikkTreening() {
-        return aeg > 60;
+    public void pikkTreening() {
+        if (aeg >= 60) {
+            System.out.println("Ossa! Täna on pikk treening käsil! Higistame palju! \n");
+        } else if (aeg < 60) {
+            System.out.println("Natuke lühem trenn täna. Pole hullu, homme pikemalt! \n");
+        } else {
+            System.out.println("Tee trenni paksu!\n");
+        }
     }
+
 
     public int suvalineNumber(){
         int number = (int) (Math.random() * 3) + 1;
